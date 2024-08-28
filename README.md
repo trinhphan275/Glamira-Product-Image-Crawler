@@ -1,0 +1,1 @@
+# Glamira-Product-Image-Crawler
