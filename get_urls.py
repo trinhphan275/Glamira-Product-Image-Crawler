@@ -24,7 +24,7 @@ def main():
     sitemap_content = fetch_sitemap(sitemap_url)
     product_urls = parse_sitemap(sitemap_content)
     
-    path = os.path.join(os.getcwd(), 'data', 'entire_urls.csv')
+    path = os.path.join(os.getcwd(), 'entire_urls.csv')
     save_urls_to_csv(product_urls, path)
     print(f"Product URLs saved to {path}")
 

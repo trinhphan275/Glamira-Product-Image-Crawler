@@ -184,7 +184,7 @@ class GlamiraCrawler:
 
 if __name__ == "__main__":
     # Define file paths for the full URLs CSV and checklist CSV
-    full_urls_csv = 'urls_test.csv'
+    full_urls_csv = 'entire_urls.csv'
     checklist_csv = 'checklist.csv'
     
     # Create an instance of GlamiraCrawler and run the crawler
