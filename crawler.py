@@ -132,6 +132,8 @@ class GlamiraCrawler:
             self.logger.error(f"Error saving to CSV: {str(e)}")
 
     def crawl_all_products(self, url: str, category_name: str, index: int):
+        # Update status to 'IN PROGRESS' before starting to scrape the URL
+        self.update_status(index, 'IN PROGRESS')
         self.logger.info(f"START SCRAPING URL: {url}")
         total_page, total_product = self.get_totalpage_totalproducts(url)
         print(total_page)
@@ -182,8 +184,9 @@ class GlamiraCrawler:
 
 if __name__ == "__main__":
     # Define file paths for the full URLs CSV and checklist CSV
-    full_urls_csv = 'urls_test.csv'  # Replace with actual path
-    checklist_csv = 'checklist.csv'  # Replace with actual path
+    full_urls_csv = 'urls_test.csv'
+    checklist_csv = 'checklist.csv'
+    
     # Create an instance of GlamiraCrawler and run the crawler
     crawler = GlamiraCrawler(full_urls_csv, checklist_csv)
     crawler.run()
