@@ -13,14 +13,14 @@ def parse_sitemap(xml_content):
     urls = [loc.text for loc in soup.find_all('loc')]
     return urls
 
-def save_urls_to_csv(urls, filename):
+def save_urls_to_csv(urls, filename): 
     df = pd.DataFrame(urls, columns=['url'])
     # Ensure the directory exists
     os.makedirs(os.path.dirname(filename), exist_ok=True)
     df.to_csv(filename, index=False, header=True)
 
 def main():
-    sitemap_url = 'https://www.glamira.com/media/sitemap/glus/category_provider.xml'  # Replace with the actual sitemap URL
+    sitemap_url = 'https://www.glamira.com/media/sitemap/glus/category_provider.xml'  
     sitemap_content = fetch_sitemap(sitemap_url)
     product_urls = parse_sitemap(sitemap_content)
     
